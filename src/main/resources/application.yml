@@ -11,8 +11,8 @@ spring:
   mail:
     host: smtp.mail.ru
     port: 587
-    username: ggntubooksclub@bk.ru
-    password: bV6su0SvZOAIJyyvN2nr
+    username: 
+    password: 
     protocol: smtp
     properties:
       mail:
