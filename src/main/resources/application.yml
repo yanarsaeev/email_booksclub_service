@@ -1,9 +1,17 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/booksclub_mail_service_db
+    url: jdbc:postgresql://email-booksclub-db:5432/booksclub_mail_service_db
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+  kafka:
+    consumer:
+      bootstrap-servers: host.docker.internal:9092,host.docker.internal:9094,host.docker.internal:9096
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: person-created-account
+      properties:
+        spring.json.trusted.packages: "com.booksclub.api.entities"
   jpa:
     show-sql: true
     hibernate:
@@ -30,3 +38,5 @@ logging:
       flywaydb: DEBUG
       springframework:
         jdbc: DEBUG
+server:
+  port: 8081

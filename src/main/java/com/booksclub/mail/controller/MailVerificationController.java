@@ -23,7 +23,7 @@ public class MailVerificationController {
     @PostMapping("/generate")
     public ResponseEntity<?> generateToken(@RequestParam String email) {
         String token = mailVerificationService.generateToken(email);
-        String confirmLink = "https://localhost:8080/api/auth/confirm?token=" + token;
+        String confirmLink = "https://localhost:8081/api/auth/confirm?token=" + token;
 
         mailSenderService.sendVerificationMail(email, confirmLink);
         return ResponseEntity.ok("Token is generated");
