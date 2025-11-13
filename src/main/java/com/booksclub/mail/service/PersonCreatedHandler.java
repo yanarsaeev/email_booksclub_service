@@ -1,6 +1,6 @@
 package com.booksclub.mail.service;
 
-import com.booksclub.mail.entity.PersonCreatedEvent;
+import com.booksclub.core.PersonCreatedEvent;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
